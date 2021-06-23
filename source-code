@@ -1,0 +1,40 @@
+from random import randint
+auto = randint(0,51)
+print("Welcome to the guessing game!\n")
+print("enter \'0000\' to exit...")
+
+def welcome():
+    global inputt
+    try:
+        inputt = int(input("Guess a nuber between 0 to 50: "))
+    except ValueError:
+        print("Enter a valid answer!\n")
+        welcome()
+    if inputt>51:
+        print("No! Enter a valid number!\n")
+        welcome()
+
+def process(inputt):
+    if inputt == 0000:
+      return
+    elif inputt == auto:
+        print("Awesome you won!!!\n")
+        print("""\
+
+                                       ._ o o
+                                       \_`-)|_
+                                    ,""       \ 
+                                  ,"  ## |   ಠ ಠ. 
+                                ," ##   ,-\__    `.
+                              ,"       /     `--._;)
+                            ,"     ## /
+                          ,"   ##    /
+
+
+                    """)
+    else:
+       print('Computer guessed {0}. Try again!\n'.format(auto))
+       welcome()
+
+welcome()
+process(inputt)
